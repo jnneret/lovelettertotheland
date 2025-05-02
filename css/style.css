@@ -3,8 +3,7 @@ html, body {
   padding: 0;
   height: 100%;
   overflow: hidden;
-  background-color: #E8E6DC;
-  font-family: 'Cal Sans', sans-serif;
+  background-color: #F0DDB3;
 }
 
 
@@ -28,7 +27,8 @@ html, body {
 }
 
 #introText {
-  font-size: 20px;
+  font-family: Georgia;
+  font-size: 30px;
   margin-top: 20px;
 }
 
