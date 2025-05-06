@@ -1,49 +1,45 @@
-let topImg, middleImg, bottomImg;
+let img;
 let yPos = 200;
+const targetWidth = 400;
+let targetHeight;
 
 function preload() {
-  topImg = loadImage('img/openlettertop.png');
-  middleImg = loadImage('img/openlettermiddle.png');
-  bottomImg = loadImage('img/openletterbottom.png');
+  img = loadImage("img/letteropen.png");
 }
 
-function setup() {
-    createCanvas(windowWidth, windowHeight);
-    imageMode(CENTER);  
-  }
-  
-  function draw() {
-    background('#E8E6DC');
-  
-    let x = width / 2;
-  
-    image(topImg, width / 2, height / 2 - 100); 
-    image(middleImg, width / 2, yPos);
-    image(bottomImg, width / 2, height / 2 + 100);
-    // ChatGPT help
-    yPos = map(sin(frameCount * 0.05), -1, 1, height / 2 - 50, height / 2 + 50);  
-
-}
-
-
-function mousePressed() {
-    let middleImgWidth = middleImg.width;
-    let middleImgHeight = middleImg.height;
-    let middleImgX = width / 2;
-    let middleImgY = yPos;
-  
-    if (
-      mouseX > middleImgX - middleImgWidth / 2 &&
-      mouseX < middleImgX + middleImgWidth / 2 &&
-      mouseY > middleImgY - middleImgHeight / 2 &&
-      mouseY < middleImgY + middleImgHeight / 2
-    ) {
-      window.location.href = "typwriter.html";  
-    }
-  }
-  
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  imageMode(CENTER); 
+  imageMode(CENTER);
+  targetHeight = null;
+  if (img.width) {
+    targetHeight = (img.height / img.width) * targetWidth;
+  }
 }
 
+function draw() {
+  background("#F2E0BF");
+
+  if (img && targetHeight) {
+    yPos = map(sin(frameCount * 0.05), -1, 1, height / 2 - 50, height / 2 + 50);
+    image(img, width / 2, yPos, targetWidth, targetHeight);
+  }
+}
+
+function mousePressed() {
+  if (!targetHeight) return; 
+
+  const centerX = width / 2;
+  const centerY = yPos;
+
+  const halfW = targetWidth / 2;
+  const halfH = targetHeight / 2;
+
+  if (
+    mouseX > centerX - halfW &&
+    mouseX < centerX + halfW &&
+    mouseY > centerY - halfH &&
+    mouseY < centerY + halfH
+  ) {
+    window.location.href = "typwriter.html";
+  }
+}

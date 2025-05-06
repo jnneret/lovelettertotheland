@@ -5,7 +5,7 @@ let paperImg;
 let pageMargin = 25;
 
 function preload() {
-  paperImg = loadImage("img/background.jpg"); 
+s; 
 }
 
 function setup() {

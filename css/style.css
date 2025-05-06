@@ -3,7 +3,7 @@ html, body {
   padding: 0;
   height: 100%;
   overflow: hidden;
-  background-color: #F0DDB3;
+  background-color: #F2E0BF;
 }
 
 
@@ -42,7 +42,7 @@ canvas {
   bottom: 20px;
   right: 30px;
   font-size: 36px;
-  color: #45212B;
+  color: #F2E0BF;
   text-decoration: none;
   font-weight: bold;
   transition: transform 0.2s ease;
@@ -53,7 +53,7 @@ canvas {
   bottom: 20px;
   right: 8px;
   font-size: 36px;
-  color: #45212B;
+  color: #F2E0BF;
   text-decoration: none;
   font-weight: bold;
   transition: transform 0.2s ease;
@@ -88,7 +88,7 @@ canvas {
 body.marqueepage {
 
   margin: 0;
-  background-color: #f5f5f5;
+  background-color: #F2E0BF;
   overflow: hidden;
 }
 
